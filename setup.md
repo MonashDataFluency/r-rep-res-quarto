@@ -2,4 +2,8 @@
 title: Pre-workshop Setup
 ---
 
-## For the Dec 11, Asian Student Counsil Symposium workshop please use the [Pre-workshop Setup Instructions](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/setup.html)
+Follow setup instructions in the Google Doc for this workshop.
+
+If you run into trouble, these instructions may also be helpful:
+
+* [Pre-workshop Setup Instructions, Carpentries Incubator version](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/setup.html)
