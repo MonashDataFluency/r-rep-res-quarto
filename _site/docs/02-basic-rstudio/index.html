@@ -1,0 +1,647 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2023-02-20 14:48:23 +1100">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+     <link rel="stylesheet" type="text/css" href="../assets/css/fonts.css" />
+    
+    <link rel="license" href="#license-info" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/incubator/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/incubator/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/incubator/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/incubator/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/incubator/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/incubator/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/incubator/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/incubator/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="The Carpentries Incubator - Introduction to Reproducible Publications with RStudio"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/incubator/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/incubator/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/incubator/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/incubator/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/incubator/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+  <title>
+  Navigating RStudio and Quarto Documents &ndash; Introduction to Reproducible Publications with RStudio
+  </title>
+
+  </head>
+  <body>
+    
+
+
+
+
+
+
+
+<div class="panel panel-default life-cycle">
+  <div id="life-cycle" class="panel-body alpha">
+    This lesson is in the early stages of development (Alpha version)
+  </div>
+</div>
+
+
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="../index.html" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/incubator-logo-blue.svg" alt="The Carpentries Incubator logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../index.html">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="../01-introduction/index.html">Scientific reproducibility: What is it for?</a></li>
+            
+            
+            <li><a href="../02-basic-rstudio/index.html">Navigating RStudio and Quarto Documents</a></li>
+            
+            
+            <li><a href="../03-quarto-documents/index.html">Introduction to Working with Quarto documents</a></li>
+            
+            
+            <li><a href="../04-good-project/index.html">Good Practices for Managing Projects in RStudio</a></li>
+            
+            
+            <li><a href="../05-setup-versioning/index.html">Getting Your project set up with Version Control in RStudio</a></li>
+            
+            
+            <li><a href="../06-writing-styling/index.html">Writing and Styling Qmd Documents</a></li>
+            
+            
+            <li><a href="../07-plots-figures/index.html">Adding Code-Generated Plots and Figures</a></li>
+            
+            
+            <li><a href="../08-code-chunks/index.html">Reproducible & Efficient Methods of Using Code Chunks</a></li>
+            
+            
+            <li><a href="../09-biblio-crossref/index.html">Bibliography, Citations & Cross-Referencing</a></li>
+            
+            
+            <li><a href="../10-github/index.html">Collaborating via Github</a></li>
+            
+            
+            <li><a href="../11-publishing-your-project/index.html">Publishing your project</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/index.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+        
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            
+            
+              <li><a href="../about/index.html">About</a></li>
+            
+            
+            
+            
+              <li><a href="../discuss/index.html">Discussion</a></li>
+            
+            
+            
+            
+              <li><a href="../figures/index.html">Figures</a></li>
+            
+            
+            
+            
+              <li><a href="../guide/index.html">Instructor Notes</a></li>
+            
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/02-basic-rstudio.Rmd" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+      
+
+
+<div class="alert alert-info text-center" role="alert">
+  This lesson is part of
+  <a href="https://github.com/carpentries-incubator/proposals/#the-carpentries-incubator" data-checker-ignore>
+    The Carpentries Incubator</a>, a place to share and use each other's
+  Carpentries-style lessons. <strong>This lesson has not been reviewed by and is
+  not endorsed by The Carpentries</strong>.
+</div>
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../01-introduction/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Introduction to Reproducible Publications with RStudio</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../03-quarto-documents/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Navigating RStudio and Quarto Documents</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 20 min
+      <br/>
+      <strong>Exercises:</strong> 10 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How do you find your way around RStudio?</p>
+</li>
+	
+	<li><p>How do you start an Quarto document in Rstudio?</p>
+</li>
+	
+	<li><p>How is an Quarto document configured and how do I work with it?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Understand key functions in Rstudio.</p>
+</li>
+	
+	<li><p>Learn about the structure of a Quarto file.</p>
+</li>
+	
+	<li><p>Understand the workflow of an Quarto file.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<h2 id="getting-around-rstudio">Getting Around RStudio</h2>
+
+<p>Throughout this lesson, we’re going to teach you some of the fundamentals of
+using Quarto as part of your RStudio workflow.</p>
+
+<p>We’ll be using RStudio: a free, open source R Integrated Development Environment
+(IDE). It provides a built in editor, works on all platforms
+(including on servers) and provides many advantages such as integration with
+version control and project management.</p>
+
+<p>This lesson assumes you already have a basic understanding of R and RStudio but
+we will do a brief tour of the IDE, review R projects and the best practices for
+organizing your work, and how to install or check packages you need to follow along.</p>
+
+<p>Now, let’s open RStudio. You may access it through the Jupyter Hub instance <a href="https://carpentryworkshop.lsit.ucsb.edu">https://carpentryworkshop.lsit.ucsb.edu</a>. After passing authentication, choose <code class="language-plaintext highlighter-rouge">RStudio</code>. If you want to follow along using your local RStudio, make sure you use IDE version RStudio v2022. 07.1 or later and that it is running <a href="https://quarto.org/docs/download/prerelease.html">Quarto version 1.2 or above</a>. If you need to check that, for RStudio, choose <code class="language-plaintext highlighter-rouge">Help</code> and <code class="language-plaintext highlighter-rouge">About RStudio</code>. For the Quarto version checking, type in <code class="language-plaintext highlighter-rouge">packageVersion("quarto")</code> on the console. </p>
+
+<p><strong>Basic layout</strong></p>
+
+<p>When you first open RStudio, you will be greeted by three panels:</p>
+
+<ul>
+  <li>The interactive R console/Terminal (entire left)</li>
+  <li>Environment/History/Connections (tabbed in upper right)</li>
+  <li>Files/Plots/Packages/Help/Viewer (tabbed in lower right)</li>
+</ul>
+
+<p><img src="../fig/02-rstudio.PNG" alt="RStudio layout" /></p>
+
+<p>Once you open files, such as .qmd, .rmd or .R files, an editor panel will also
+open in the top left.</p>
+
+<p><img src="../fig/02-rstudio-script.PNG" alt="RStudio layout with .R file open" /></p>
+
+<h3 id="r-packages">R Packages</h3>
+
+<p>Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data. They are collections of R functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library.
+It is possible to add functions to R by writing a package, or by obtaining a
+package written by someone else. As of this writing, there are over 10,000
+packages available on CRAN (the comprehensive R archive network). R and RStudio
+have functionality for managing packages:</p>
+
+<ul>
+  <li>You can <em>install packages</em> by typing <code class="language-plaintext highlighter-rouge">install.packages("packagename")</code>, where <code class="language-plaintext highlighter-rouge">packagename</code> is the package name, in quotes.</li>
+  <li>You can <em>see what packages</em> are installed by typing <code class="language-plaintext highlighter-rouge">installed.packages()</code></li>
+  <li>You can <em>update installed packages</em> by typing <code class="language-plaintext highlighter-rouge">update.packages()</code></li>
+  <li>You can <em>remove a package</em> with <code class="language-plaintext highlighter-rouge">remove.packages("packagename")</code></li>
+  <li>You can <em>make a package available</em> for use with <code class="language-plaintext highlighter-rouge">library(packagename)</code></li>
+</ul>
+
+<p>Packages can also be viewed, loaded, and detached in the Packages tab of the
+lower right panel in RStudio. Clicking on this tab will display all of installed
+packages with a checkbox next to them. If the box next to a package name is
+checked, the package is loaded and if it is empty, the package is not loaded.
+Click an empty box to load that package and click a checked box to detach that
+package.</p>
+
+<p>Packages can be installed and updated from the Package tab with the <em>Install</em> and
+<em>Update</em> buttons at the top of the tab. We have asked you to install a few packages prior to the workshop following the <a href="https://github.com/UCSBCarpentry/Reproducible-Publications-with-RStudio/blob/main/setup.md">setup instructions</a> using the <code class="language-plaintext highlighter-rouge">install.packages()</code> command. Let’s now make sure you have all of them good to go.</p>
+
+<blockquote class="challenge">
+  <h2 id="challenge-21---checking-for-installed-packages">CHALLENGE 2.1 - Checking for Installed Packages</h2>
+  <p>Which command would you use to check for packages ready for use?</p>
+  <blockquote class="solution">
+    <h2 id="solution">SOLUTION</h2>
+    <p>To see what packages are installed, use the <code class="language-plaintext highlighter-rouge">installed.packages()</code> command. This will return a matrix with a row for each package that has been installed.</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="starting-and-naming-a-new-quarto-document">Starting and Naming a New Quarto Document</h2>
+
+<p>Start a new Quarto document in RStudio by clicking File &gt; New File &gt; Quarto Document…</p>
+
+<p><img src="../fig/02-name-new-qmd.PNG" alt="Name new .qmd file" /></p>
+
+<p>You may name your Quarto document as “My-first-qmd”.</p>
+
+<p>New Quarto files will have a generic template unless you click the
+“Create Empty Document” in the bottom left-hand corner of the dialog box.</p>
+
+<p>We will keep all pre-selected options: HTML as the output, knitr engine and the visual editor. The output might be changed at anytime and we can easily switch between the visual and the source editor. Knitr will be the engine used to execute the R codes and to render the document in Rstudio.</p>
+
+<p>If you see this default text you’re good to go:</p>
+
+<p><img src="../fig/02-qmd-new-template.PNG" alt=".qmd new file generic template" /></p>
+
+<h3 id="visual-editor-vs-source-editor">Visual Editor vs. Source Editor</h3>
+
+<p>Remember that in the settings we chose to use the visual editor? RStudio released a new major update to their IDE in January 2020, which includes a new “visual editor” to supplement their original editor (which we will call the source editor) for authoring with markdown syntax. The visual editor follows the WYSIWYG “what you see is what you get” approach similarly to Word or Google docs that lets you choose styling options from the menu (before you had to either have the markdown code memorized or look it up for each of your styling choices). Another major benefit is that the new editor renders the styling in real time so you can preview your paper before rendering to your output format.</p>
+
+<h4 id="source-editor">Source Editor</h4>
+
+<p>If you toggle the source button, you will display your quarto document in the “source editor” mode. Notice the symbols scattered throughout the text (#, *, &lt;&gt;). Those are examples of markdown syntax, an easy and quick, human-readable markup language for document styling.</p>
+
+<p><img src="../fig/02-qmd-source.PNG" alt="Add image source editor" /></p>
+
+<blockquote class="challenge">
+  <h2 id="challenge-22---formatting-with-symbols-optional">CHALLENGE 2.2 - Formatting with Symbols (optional)</h2>
+  <p>Certain symbols are used to denote formatting that should happen to the text (after render it). Before that, these symbols will show up seemingly “randomly” throughout the text and don’t contribute to the narrative in a logical way. In the template qmd document, there are three types of such symbols (<code class="language-plaintext highlighter-rouge">##, **, &lt;&gt;</code>). Each symbol represents a different kind of formatting (think of your text formatting buttons you use in Word). Can you deduce from the surrounding text how these symbols format the surrounding text?</p>
+  <blockquote class="solution">
+    <h2 id="solution-1">SOLUTION</h2>
+    <p><code class="language-plaintext highlighter-rouge">##</code> is a heading, <code class="language-plaintext highlighter-rouge">**</code> is to bold enclosed text, and <code class="language-plaintext highlighter-rouge">&lt;&gt;</code> is for hyperlinks.
+Don’t worry about this too much right now! This is an example of markdown syntax for styling, you won’t need it if you stick to the visual editor, but it is recommended to get at least a basic understanding of markdown syntax if you plan to work with <code class="language-plaintext highlighter-rouge">.qmd</code> documents frequently.</p>
+  </blockquote>
+</blockquote>
+
+<h4 id="visual-editor">Visual Editor</h4>
+
+<p>Let’s switch back to the visual editor. You’ll notice that formatting elements like headings, hyperlinks and bold have been generated automatically, giving us a preview of how our text will render. The  However, the visual editor does not run any code automatically, we’ll have to do that manually (but we will learn how to do that later on).</p>
+
+<p>We will proceed using the visual editor during this workshop as it is more
+user-friendly and allows us to talk about styling without needing to teach the
+whole markdown syntax system. However, we highly encourage you to become
+familiar with markdown syntax as it
+increases your abilities to format and style your paper without relying on the
+visual editor options.</p>
+
+<p>Note that both the visual and the source editors offer the option to display an outline of your document <img src="https://user-images.githubusercontent.com/63265343/192625580-ad6bddc1-98b7-437e-8aaf-2190651d456b.png" alt="image" /> which make it easier to navigate long documents.</p>
+
+<blockquote class="callout">
+  <h2 id="tip-resources-to-learn-more-about-quarto">Tip: Resources to learn more about Quarto</h2>
+  <p>If you want to learn more about the source editor, please see
+the <a href="https://quarto.org/docs/guide">Quarto Guide</a>.</p>
+</blockquote>
+
+<p>Now we’ll get into how our Quarto file &amp; workflow is organized and then on
+to editing and styling!</p>
+
+
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>RStudio has four panels to organize your code and environment.</p>
+</li>
+    
+    <li><p>Manage packages in RStudio using specific functions.</p>
+</li>
+    
+    <li><p>Quarto documents combine text and code.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../01-introduction/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../03-quarto-documents/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6 license" id="license-info" align="left">
+	
+        Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> 2023 by <a href="../CITATION">the authors</a>.
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/02-basic-rstudio.Rmd" data-checker-ignore>Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md" data-checker-ignore>Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION" data-checker-ignore>Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <p class="text-muted text-right">
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-02-20 14:48:23 +1100.</i></small>
+  </p>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setDomains", ["*.lessons.carpentries.org","*.datacarpentry.github.io","*.datacarpentry.org","*.librarycarpentry.github.io","*.librarycarpentry.org","*.swcarpentry.github.io"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://carpentries.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/carpentries.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+<script src="../assets/js/anchor.min.js"></script>
+<script>
+    anchors.add();
+</script>
+
+  </body>
+</html>

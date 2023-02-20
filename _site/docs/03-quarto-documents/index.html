@@ -1,0 +1,687 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2023-02-20 14:48:23 +1100">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+     <link rel="stylesheet" type="text/css" href="../assets/css/fonts.css" />
+    
+    <link rel="license" href="#license-info" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/incubator/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/incubator/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/incubator/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/incubator/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/incubator/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/incubator/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/incubator/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/incubator/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/incubator/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="The Carpentries Incubator - Introduction to Reproducible Publications with RStudio"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/incubator/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/incubator/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/incubator/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/incubator/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/incubator/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+  <title>
+  Introduction to Working with Quarto documents &ndash; Introduction to Reproducible Publications with RStudio
+  </title>
+
+  </head>
+  <body>
+    
+
+
+
+
+
+
+
+<div class="panel panel-default life-cycle">
+  <div id="life-cycle" class="panel-body alpha">
+    This lesson is in the early stages of development (Alpha version)
+  </div>
+</div>
+
+
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="../index.html" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/incubator-logo-blue.svg" alt="The Carpentries Incubator logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../index.html">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="../01-introduction/index.html">Scientific reproducibility: What is it for?</a></li>
+            
+            
+            <li><a href="../02-basic-rstudio/index.html">Navigating RStudio and Quarto Documents</a></li>
+            
+            
+            <li><a href="../03-quarto-documents/index.html">Introduction to Working with Quarto documents</a></li>
+            
+            
+            <li><a href="../04-good-project/index.html">Good Practices for Managing Projects in RStudio</a></li>
+            
+            
+            <li><a href="../05-setup-versioning/index.html">Getting Your project set up with Version Control in RStudio</a></li>
+            
+            
+            <li><a href="../06-writing-styling/index.html">Writing and Styling Qmd Documents</a></li>
+            
+            
+            <li><a href="../07-plots-figures/index.html">Adding Code-Generated Plots and Figures</a></li>
+            
+            
+            <li><a href="../08-code-chunks/index.html">Reproducible & Efficient Methods of Using Code Chunks</a></li>
+            
+            
+            <li><a href="../09-biblio-crossref/index.html">Bibliography, Citations & Cross-Referencing</a></li>
+            
+            
+            <li><a href="../10-github/index.html">Collaborating via Github</a></li>
+            
+            
+            <li><a href="../11-publishing-your-project/index.html">Publishing your project</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/index.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+        
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            
+            
+              <li><a href="../about/index.html">About</a></li>
+            
+            
+            
+            
+              <li><a href="../discuss/index.html">Discussion</a></li>
+            
+            
+            
+            
+              <li><a href="../figures/index.html">Figures</a></li>
+            
+            
+            
+            
+              <li><a href="../guide/index.html">Instructor Notes</a></li>
+            
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/03-quarto-documents.Rmd" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+      
+
+
+<div class="alert alert-info text-center" role="alert">
+  This lesson is part of
+  <a href="https://github.com/carpentries-incubator/proposals/#the-carpentries-incubator" data-checker-ignore>
+    The Carpentries Incubator</a>, a place to share and use each other's
+  Carpentries-style lessons. <strong>This lesson has not been reviewed by and is
+  not endorsed by The Carpentries</strong>.
+</div>
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../02-basic-rstudio/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Introduction to Reproducible Publications with RStudio</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../04-good-project/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Introduction to Working with Quarto documents</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 20 min
+      <br/>
+      <strong>Exercises:</strong> 5 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>What is the breakdown of a Quarto document?</p>
+</li>
+	
+	<li><p>What are templates in Quarto?</p>
+</li>
+	
+	<li><p>How can you render the input file to the specified output format?</p>
+</li>
+	
+	<li><p>How can you create pre-formatted for qmd document based on journal templates?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Learn about the structure of a quarto document.</p>
+</li>
+	
+	<li><p>Learn how an quarto document works.</p>
+</li>
+	
+	<li><p>Learn how to render a .qmd file into an output format.</p>
+</li>
+	
+	<li><p>Understand what are jornal formats are and the advantage of using them.</p>
+</li>
+	
+	<li><p>Learn how to start a Quarto document in RStudio.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<h2 id="anatomy-of-a-quarto-document">Anatomy of a Quarto Document</h2>
+<p>The key to our reproducible workflow is using Quarto files in RStudio rather than basic scripts to dynamically render both code and paper narrative. So let’s do a quick anatomy lesson on the components of an Quarto file (YAML header, Quarto formatted, R code blocks; also known as “code chunks”) and how to render them into our final formatted document.
+There are four distinct steps in the Quarto workflow:</p>
+<ol>
+  <li>create a <strong>YAML header</strong> (optional)</li>
+  <li>write Quarto-formatted <strong>text</strong></li>
+  <li>add R <strong>code blocks</strong> for embedded analysis</li>
+  <li>render the document with the selected engine <strong>(Knitr in this example)</strong></li>
+</ol>
+
+<p><img src="../fig/03-qmd-workflow.png" alt="Quarto Workflow" /></p>
+
+<p>Let’s dig in to those more:</p>
+
+<h3 id="1-yaml-header">1. YAML header:</h3>
+<h4 id="what-is-yaml-anyway">What is YAML anyway?</h4>
+<p>YAML, pronounced “Yeah-mul” stands for “YAML Ain’t Markup Language”. YAML is a human-readable <a href="https://en.wikipedia.org/wiki/Serialization">data-serialization</a> language which, as its name suggests, is not a markup language. YAML has no executable commands though it is compatible with all programming languages and virtually any application that deals with storing or transmiting data. YAML itself is made up of bits of many languages including Perl, MIME, C, &amp; HTML. YAML is also a superset of JSON. When used as a stand-alone file the file ending is .yml or .yaml.
+<br /></p>
+
+<p>Quarto default YAML header includes the following metadata surrounded by three dashes <code class="language-plaintext highlighter-rouge">---</code>:</p>
+<ul>
+  <li>title</li>
+  <li>author</li>
+  <li>format</li>
+  <li>editor</li>
+</ul>
+
+<p><img src="../fig/03-qmd-template-yaml.png" alt="yaml highlighted in document" /></p>
+
+<p>The format is selected in the wizard for starting a new document. You are able to pick from pdf, html, and word document. Basically, this allows you to export your qmd file as a file type of your choice. There are <a href="https://bookdown.org/yihui/rmarkdown/output-formats.html">other options for output format</a> and even more can be added by installing certain packages, but these are the three default options. <br />
+<br /></p>
+
+<p>We’ll see other formatting options for YAML later on including how to add bibliography information, customize our output, and change the default settings for executing your code. Below is an example of how our YAML file will look at the end of this workshop.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+---
+title: "Data Article: Trier social stress test and food-choice: Behavioral, self-report &amp; hormonal data (Carpentry Workshop Version)"
+author: "Felix Jan Nitsch; Manuela Sellitto; Tobias Kalenscher"
+format: html
+editor: visual
+bibliography: references.bib
+execute:
+  echo: true
+  ...
+---
+---
+</code></pre></div></div>
+
+<h3 id="2-formatted-text">2. Formatted text:</h3>
+<p>This one is simple, it’s literally just text narrative formatted by using markdown (more on markdown syntax later). Markdown-formatted text is one of the benefits added above and beyond the capabilities of a regular r script. Any text section will have the default white background in the qmd document. As you might know, in a regular R file, # starts a comment. In Quarto, plain text is just plain narrative text that appears in the document. In R scripts, plain text wants to be code. In Quarto, you will need to enclose your code in special characters. Any symbols you do see that aren’t regular grammar components are for formatting, such as <code class="language-plaintext highlighter-rouge">##</code>, <code class="language-plaintext highlighter-rouge">** **</code>, and <code class="language-plaintext highlighter-rouge">&lt; &gt;</code>.</p>
+
+<blockquote class="callout">
+  <h2 id="tip-bonus-you-can-use-a-variety-of-languages-to-format-text-and-images-in-quarto">Tip: Bonus! You can use a variety of languages to format text and images in Quarto:</h2>
+  <ul>
+    <li>Quarto</li>
+    <li>HTML</li>
+    <li>LaTeX</li>
+    <li>CSS</li>
+  </ul>
+</blockquote>
+
+<h3 id="3-code-blocks">3. Code Blocks:</h3>
+<p>Code blocks appear highlighted in gray throughout the qmd document. They are surrounded by three tick marks on either side (```) <strong>in source mode</strong> with the starting three tick marks followed by curly brackets <code class="language-plaintext highlighter-rouge">{}</code>with some other code inside. The tick marks indicate the start of a code section and the bits found between the curly brackets <code class="language-plaintext highlighter-rouge">{}</code>indicate how R should read and display the code (more on this in the Knitr syntax episodes). These are the sections you add R code such as summary statistics, analysis, tables and plots. If you’ve already written an R script you can copy and paste your code between the few lines of required formatting to embed &amp; run whichever piece you want at that particular spot in the document.</p>
+
+<blockquote class="callout">
+  <h2 id="tip-bonus-you-may-code-with-many-different-languages-in-rstudio">Tip: Bonus! You may code with many different languages in RStudio:</h2>
+  <ul>
+    <li>R</li>
+    <li>Python</li>
+    <li>Bash</li>
+    <li>SQL</li>
+  </ul>
+
+  <p>A complete list of compatible languages can be found at: <a href="https://rmarkdown.rstudio.com/lesson-5.html">https://rmarkdown.rstudio.com/lesson-5.html</a></p>
+</blockquote>
+
+<p>Let’s take a look at the Quarto document template we have just created to see how formatted text and code are represented.</p>
+
+<p><img src="../fig/03-qmd-template-text.png" alt="qmd template text" /><br /></p>
+
+<h3 id="4-rendering-your-qmd-document">4. Rendering your Qmd document:</h3>
+<p>Simply put, rendering is the process of converting a document into a file format or a medium that is paginated or has the concept of pages. Clicking the render button will compile the code, check for errors, and finally, output the type of file indicated in your yaml header. You may select the option “Render on Save” to see a preview of your document every time you save edits. Attention: your qmd document may not run and render as your indicated output if there are any errors in the document so it also functions somewhat as a code checker.
+<br /></p>
+
+<h4 id="try-it-yourself">Try it yourself!</h4>
+<p>We’re going to pause here and see what the Quarto document does when it’s rendered. We’ll just use the generic template, but when we’re working on our own project, rendering periodically while we’re editing allows us to catch any mistakes early. We’ll continue rendering our qmd throughout the lesson to see what happens when we add our markdown and knitr syntax and to make sure we aren’t making any errors.</p>
+
+<p>This is a little preview of what’s to come in the later episodes:
+Click the “render” button.</p>
+
+<p>Before you can render your document, you’ll need to give it a file name and choose what folder you want to save it to. Choose <code class="language-plaintext highlighter-rouge">my_first_qmd.qmd</code> as your file name and save it to an easily accessible directory in your file system.</p>
+
+<p>Your document should render like that: <br /></p>
+
+<p><img src="../fig/03-render-html.png" alt="Render html output" /> <br /></p>
+
+<blockquote class="callout">
+  <h2 id="warning-enable-pop-ups">Warning: Enable Pop-ups!</h2>
+  <p>If using the Jupyter Hub RStudio set up, you may not see your preview until you enable pop-ups, since the webrowser of your choice may block pop-ups by default.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="challenge-31---rendering-the-document-in-another-format">CHALLENGE 3.1 - Rendering the document in another format</h2>
+  <p>Suppose you want this .qmd document to render as a word document. What options would you have?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution:</h2>
+    <p>You may change the output format in the YAML to <code class="language-plaintext highlighter-rouge">docx</code>. 
+Note that to preview word documents you need to have MS Word, Libre or Open Office installed on your machine. 
+Alternatively, you may enter the following command in the terminal:
+`quarto render my_first_qmd.qmd –to docx</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="callout">
+  <h2 id="note-about-pdfs">Note about PDFs</h2>
+  <p>In order to create PDFs you will need to install a recent distribution of LaTeX. We recommend the use of TinyTeX, which you can install with the following command: <code class="language-plaintext highlighter-rouge">quarto install tool tinytex</code>.</p>
+</blockquote>
+
+<h2 id="creating-pre-formatted-papers-demonstration-only">Creating Pre-formatted Papers (Demonstration Only)</h2>
+
+<p>We have learned how to start a new document on RStudio and we will learn good practices for project organization next. But, let’s say you are writing a paper having a journal in mind? Writing it in your own style and then formatting prior to submission will duplicate your work, right? The good news is that RStudio and Quarto can give us a hand with that.</p>
+
+<p>Quarto offers some journal formats and made them available within the quarto-journals GitHub organization, including:</p>
+
+<ul>
+  <li>Association of Computing Machinery</li>
+  <li>American Chemical Society</li>
+  <li>Biophysical journal</li>
+  <li>Elsevier Journals</li>
+  <li>American Statistical Association Journals</li>
+  <li>Journal of Statistical Software</li>
+  <li>Public Library of Science</li>
+</ul>
+
+<p>This list is expected to rapidly grow with new contributions submitted to the <a href="https://github.com/quarto-journals">Quarto Journal Templates Repository</a>. You may also create your own templates following <a href="https://quarto.org/docs/journals/templates.html">these guidelines</a>.</p>
+
+<p>Journal templates require features of Quarto version 1.2 so we need to ensure we have the right Quarto version.  You can check your Quarto version in the Terminal with command: <code class="language-plaintext highlighter-rouge">quarto --version</code>.  We should be good with that for this workshop, but if you are using a lab computer later on, you may need to update Quarto.  See: <a href="https://quarto.org/docs/download/prerelease.html">pre-release versions of Quarto</a></p>
+
+<p>Quarto uses a template command that can be called in the terminal to create an article in any of these formats. Suppose you want to use the Elsevier template. In Rstudio, in the terminal (if not showing, select <code class="language-plaintext highlighter-rouge">Tools &gt; Terminal &gt; New</code>), type <code class="language-plaintext highlighter-rouge">quarto use template quarto-journals/elsevier</code>. Then, follow the steps below:</p>
+
+<ul>
+  <li>1) Trust the authors: <code class="language-plaintext highlighter-rouge">? Do you trust the authors of this template (Y/n) › Yes</code></li>
+  <li>2) Give a name to the directory ` ? Directory name: › elsevier-template`</li>
+</ul>
+
+<p>This will install the extension and create an example qmd file and bibiography with all required files that you can use as a starting place for your article:</p>
+
+<p><img src="../fig/03-journal-template.png" alt="Journal-Templates" /> <br /></p>
+
+<p>Locate the directory where you have saved the template. You can make a copy of <code class="language-plaintext highlighter-rouge">elsevier-template.qmd</code> document or rename it as start writing your paper following the journal’s formatting requirements.</p>
+
+<p>It is beyond the scope of this workshop to cover journal templates more extensively, but if you want to explore further how to apply templates, apply styling and even create your own templates, check the <a href="https://github.com/quarto-journals/article-format-template">Quarto Journals GitHub page</a>.</p>
+
+<blockquote class="callout">
+  <h2 id="tip">Tip</h2>
+  <p>Before proceeding always check if the template of interest meets the most updated guidelines in the journal website, since these templates are maintained by the Quarto community, not the journal editors.</p>
+</blockquote>
+
+
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>An qmd file is comprised of a YAML header, formatted text in qmd and code blocks.</p>
+</li>
+    
+    <li><p>The render function converts the file into the chosen output format.</p>
+</li>
+    
+    <li><p>Rstudio has some journals’ formats that can save you some time or you can make your own for frequent submissions.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../02-basic-rstudio/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../04-good-project/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6 license" id="license-info" align="left">
+	
+        Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> 2023 by <a href="../CITATION">the authors</a>.
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/03-quarto-documents.Rmd" data-checker-ignore>Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md" data-checker-ignore>Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION" data-checker-ignore>Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <p class="text-muted text-right">
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-02-20 14:48:23 +1100.</i></small>
+  </p>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setDomains", ["*.lessons.carpentries.org","*.datacarpentry.github.io","*.datacarpentry.org","*.librarycarpentry.github.io","*.librarycarpentry.org","*.swcarpentry.github.io"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://carpentries.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/carpentries.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+<script src="../assets/js/anchor.min.js"></script>
+<script>
+    anchors.add();
+</script>
+
+  </body>
+</html>
