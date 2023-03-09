@@ -51,7 +51,7 @@ library(renv)
 renv::init()
 ```
 
-This creates the initial `renv.lock` file.  Then, whenever you start using a new package (or otherwise change your project's dependencies), run `renv::snapshot()` to update the lockfile.  Finally, if you are using git and start using renv, you will notice that renv creates several files and directories in addition to `renv.lock`.  Go ahead and commit the files to your project's git repository.
+This creates the initial `renv.lock` file.  Then, whenever you start using a new package (or otherwise change your project's dependencies), run `renv::snapshot()` to update the lockfile.  Finally, if you are using git and start using renv, you will notice that renv creates several files and directories in addition to `renv.lock`. For reproducibility, be sure to commit the `renv.lock` file, and also `.Rprofile` and `renv/activate.R`.
 
 
 

@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2023-02-20 15:26:03 +1100">
+    <meta http-equiv="last-modified" content="2023-03-08 09:48:55 +1100">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -1481,7 +1481,7 @@ The final option is to continue a version controlled project. This is the option
 <blockquote class="prereq">
   <h2 id="our-turn">Our turn!</h2>
 
-  <p class="source">We have a repository already prepared for this workshop at <a href="https://github.com/UCSBCarpentry/Quarto-Project-Example">https://github.com/UCSBCarpentry/Quarto-Project-Example</a>. 
+  <p class="source">We have a repository already prepared for this workshop at <a href="https://github.com/MonashDataFluency/r-rep-res-quarto-example">https://github.com/MonashDataFluency/r-rep-res-quarto-example</a>. 
 We are going to use the third option to download this repository from GitHub and work with it hands on. You will need this repo in your working environment if you would like to follow along through this workshop.
 Let’s take a second to acquaint ourselves with GitHub. <a href="https://github.com/signup">At this link</a>, you may sign into your GitHub account or create one if you have not already.</p>
 </blockquote>
@@ -1496,7 +1496,7 @@ Let’s take a second to acquaint ourselves with GitHub. <a href="https://github
 
 <p><img src="../fig/05-fork.PNG" alt="fork on GitHub" /></p>
 
-<p>If you are a member of any organizations on GitHub, you will be asked whether you want to fork to your account or to an organization. Choose your personal account for this workshop. Un-check the option to “Copy the Main branch Only” as you want all branches. <img src="../fig/05-git-fork-all-branches.png" alt="fork all branches" /> GitHub will process for a few moments and voila! You have your own copy of the workshop example repository.</p>
+<p>If you are a member of any organizations on GitHub, you will be asked whether you want to fork to your account or to an organization. Choose your personal account for this workshop. <!-- Un-check the option to "Copy the Main branch Only" as you want all branches. ![fork all branches](../fig/05-git-fork-all-branches.png) GitHub will process for a few moments and voila! You have your own copy of the workshop example repository. --></p>
 
 <p>Now, click on the green <code class="language-plaintext highlighter-rouge">Code</code> drop-down and then click on the copy icon next to the repository url:</p>
 
@@ -1510,10 +1510,9 @@ Let’s take a second to acquaint ourselves with GitHub. <a href="https://github
 
 <p><img src="../fig/05-git-new-project-clone.png" alt="start my R project" /></p>
 
-<p>Now you have cloned a copy of your git repo from Github to your working environment.<br />
-One more step: Make sure to select the quarto branch in RStudio (on your local instance or Jupyter Hub) on the Git tab.</p>
+<p>Now you have cloned a copy of your git repo from Github to your working environment.</p>
 
-<p><img src="../fig/05-selecting-quarto-branch.png" alt="Select Quarto Branch" /></p>
+<!-- One more step: Make sure to select the quarto branch in RStudio (on your local instance or Jupyter Hub) on the Git tab. ![Select Quarto Branch](../fig/05-selecting-quarto-branch.png) -->
 
 <p>If you’re working in the JupyterHub environment you will need to configure Git with your name and email before you’ll be able to commit the changes you make during this workshop.  Substitute your name and email address in the commands below and paste them into the Terminal panel of RStudio.</p>
 
@@ -2387,7 +2386,7 @@ library(renv)
 renv::init()
 </code></pre></div></div>
 
-<p>This creates the initial <code class="language-plaintext highlighter-rouge">renv.lock</code> file.  Then, whenever you start using a new package (or otherwise change your project’s dependencies), run <code class="language-plaintext highlighter-rouge">renv::snapshot()</code> to update the lockfile.  Finally, if you are using git and start using renv, you will notice that renv creates several files and directories in addition to <code class="language-plaintext highlighter-rouge">renv.lock</code>.  Go ahead and commit the files to your project’s git repository.</p>
+<p>This creates the initial <code class="language-plaintext highlighter-rouge">renv.lock</code> file.  Then, whenever you start using a new package (or otherwise change your project’s dependencies), run <code class="language-plaintext highlighter-rouge">renv::snapshot()</code> to update the lockfile.  Finally, if you are using git and start using renv, you will notice that renv creates several files and directories in addition to <code class="language-plaintext highlighter-rouge">renv.lock</code>. For reproducibility, be sure to commit the <code class="language-plaintext highlighter-rouge">renv.lock</code> file, and also <code class="language-plaintext highlighter-rouge">.Rprofile</code> and <code class="language-plaintext highlighter-rouge">renv/activate.R</code>.</p>
 
 <h2 id="global-quarto-options">Global Quarto Options</h2>
 
@@ -2850,17 +2849,17 @@ render the document and voiala!
 
   <p>We have used a few packages in our paper that we do not necessarily cite in text. However, it is a good practice to add them to the reference list. This practice is recommended for giving proper credit to package developers and also to inform your readers about the exact version you have used to produce your paper.</p>
 
-  <p>Ideally we would follow this process for all packages we have installed and used to produce the paper. But for the sake of time, let’s do that process for the Tidyverse package only.</p>
+  <p>Ideally we would follow this process for all packages we have installed and used to produce the paper. But for the sake of time, let’s do that process for the stringi package only.</p>
 
-  <p>1) First, you would go to the <a href="https://cran.r-project.org/web/packages/tidyverse/index.html">CRAN page for Tidyverse</a>, click on citation info link and copy the corresponding BibTeX entry. 
-2) Paste the bibtex to the “references.bib” file inside the “report/source and adjust the key as you wish.</p>
+  <p>1) First, you would go to the <a href="https://cran.r-project.org/web/packages/stringi/index.html">CRAN page for stringi</a>, click on citation info link and copy the corresponding BibTeX entry. 
+2) Paste the bibtex into the “references.bib” file, and ensure the new entry has the key <strong>stringi2022</strong>.</p>
 
-  <p>We have pre-saved the bibtex for Tidyverse for you. Now that you have the citation info and know the that key for the package is @Tidyverse2019, how would you go about to add this bibliography as a no-cite?</p>
+  <p>Now that you have the citation info and know the key for the package is @stringi2022, how would you go about to add this bibliography as a no-cite?</p>
 
   <blockquote class="solution">
     <h2 id="solution-2">Solution</h2>
 
-    <p>You should call the @Tidyverse2019 it in the YAML, with the nocite function:</p>
+    <p>You should call the @stringi2022 it in the YAML, with the nocite function:</p>
 
     <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nocite: |
  @Tidyverse2019
@@ -2993,6 +2992,8 @@ And then, enter the @fig-id where you want to note the cross-referece in your pa
   </div>
 
 </blockquote>
+
+<div style="font-size: 150%; margin: 20px; border: solid 2px red;">Note: Instead of using this section, we will rely on <a href="https://github.com/GitCredentialManager/git-credential-manager/blob/release/docs/install.md">Git Credential Manager</a>. Windows users will have installed this when they installed Git for Windows. Mac users will need to install it separately.</div>
 
 <p>In <a href="../05-setup-versioning/">episode 5</a> we learned about using version control as you write your publication.  In this part of the workshop we’ll setup Rstudio to authenticate with Github which is necessary to <em>push</em> your changes to Github.</p>
 
@@ -3283,7 +3284,7 @@ with a URL similar to: <code class="language-plaintext highlighter-rouge">https:
     </div>
   </div>
   <p class="text-muted text-right">
-    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-02-20 15:26:03 +1100.</i></small>
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-08 09:48:55 +1100.</i></small>
   </p>
 </footer>
 
