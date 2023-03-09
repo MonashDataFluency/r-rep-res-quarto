@@ -216,8 +216,8 @@ The caption information also resides at the top of a code chunk using the `#|` s
 >> #| echo: false
 >> #| message: false
 >> #| warning: false
->> #| results: false,
->> fig.cap: "Fig 3: Mean heart rate of stress and control groups at baseline and during intervention."
+>> #| results: false
+>> #| fig.cap: "Fig 3: Mean heart rate of stress and control groups at baseline and during intervention."
 >> ~~~
 >> {: .language-r}
 >> Set the option `fig.cap` to equal the text in double quotes.
