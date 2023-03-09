@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2023-03-08 09:48:55 +1100">
+    <meta http-equiv="last-modified" content="2023-03-09 19:50:02 +1100">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -566,8 +566,12 @@
 
 <blockquote class="challenge">
   <h2 id="challenge-71---rendering-codes-optional">CHALLENGE 7.1 - Rendering Codes (optional)</h2>
-  <p>How will some hypothetical code render given the following options?
-<code class="language-plaintext highlighter-rouge">{r global-chunk-challenge, eval = TRUE, include = FALSE}</code></p>
+  <p>How will some hypothetical code render given the following options?</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{r}
+#| label: global-chunk-challenge
+#| eval = true
+#| include = false
+</code></pre></div>  </div>
 
   <blockquote class="solution">
     <h2 id="solution">SOLUTION</h2>
@@ -614,15 +618,20 @@ If you need to calculate some value or do something on your dataset for a furthe
 <p><strong>Don’t forget to put the caption within quotes <code class="language-plaintext highlighter-rouge">""</code>.</strong></p>
 
 <blockquote class="challenge">
-  <h2 id="challenge-73-add-a-caption-to-figure-3">CHALLENGE 7.3: Add a caption to Figure 3</h2>
+  <h2 id="challenge-72-add-a-caption-to-figure-3">CHALLENGE 7.2: Add a caption to Figure 3</h2>
   <p>Let’s add a caption to our heartrate figure. Add the caption:</p>
 
   <p>“Fig 3: Mean heart rate of stress and control groups at baseline and during intervention.”</p>
   <blockquote class="solution">
     <h2 id="solution-1">SOLUTION</h2>
     <p>so, you should end up with the following in your code chunk:</p>
-    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="n">r</span><span class="w"> </span><span class="n">fig3</span><span class="o">-</span><span class="n">heartrate</span><span class="p">,</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">warning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> 
-</span><span class="n">fig.cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Fig 3: Mean heart rate of stress and control groups at baseline and during intervention."</span><span class="p">}</span><span class="w">
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="n">r</span><span class="p">}</span><span class="w">
+</span><span class="c1">#| label: fig3-heartrate</span><span class="w">
+</span><span class="c1">#| echo: false</span><span class="w">
+</span><span class="c1">#| message: false</span><span class="w">
+</span><span class="c1">#| warning: false</span><span class="w">
+</span><span class="c1">#| results: false,</span><span class="w">
+</span><span class="n">fig.cap</span><span class="o">:</span><span class="w"> </span><span class="s2">"Fig 3: Mean heart rate of stress and control groups at baseline and during intervention."</span><span class="w">
 </span></code></pre></div>    </div>
     <p>Set the option <code class="language-plaintext highlighter-rouge">fig.cap</code> to equal the text in double quotes.</p>
   </blockquote>
@@ -675,7 +684,14 @@ If you need to calculate some value or do something on your dataset for a furthe
 
 <p>What if you only need to make a quick calculation and adding a code chunk seems a little overkill?</p>
 
-<p>You can also include <code class="language-plaintext highlighter-rouge">r code</code> directly in your the text portion of your document. Say you are discussing some of the summary statistics in your manuscript, Quarto makes this possible through HTML/LaTeX inline code which allows you to calculate simple expressions integrated to your narrative. Inline code enables you to insert <code class="language-plaintext highlighter-rouge">r code</code> into your document to dynamically updated portions of your text. In other words, if your data set changes for any reason the code will automatically update the calculation specified.</p>
+<p>You can directly include code into the text portion of your document with inline code, for example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There are ` r sum(1:14) ` cats in the neighbourhood
+</code></pre></div></div>
+
+<p>We’ve had to put an extra space between the backticks ` and the code to prevent it from rendering so you can understand how to write inline code. You can copy that line into the test-code.qmd document then remove the spaces. If we render the test-code.qmd document, what change do we see?</p>
+
+<p>Say you are discussing some of the summary statistics in your manuscript, Quarto makes this possible through HTML/LaTeX inline code which allows you to calculate simple expressions integrated to your narrative. Inline code enables you to insert <code class="language-plaintext highlighter-rouge">r code</code> into your document to dynamically updated portions of your text. In other words, if your data set changes for any reason the code will automatically update the calculation specified.</p>
 
 <p>This can be helpful when referring to specific variables on your data. For example, you should include numbers that are derived from the data as code not as numbers. Thus, rather than writing “The CSV file contains choice consistency data for 10.000 simulated participants” <strong>(Example 7)</strong> , replace the static number with a bit of code that, when evaluated, gives you a dynamic number if anything changes on your dataset. Note that there is not an insert option to do this from the menu in the visual editor, so we need to insert inline code manually with  <code class="language-plaintext highlighter-rouge">r</code>, for example:</p>
 
@@ -692,7 +708,7 @@ If you need to calculate some value or do something on your dataset for a furthe
 </blockquote>
 
 <blockquote class="challenge">
-  <h2 id="challenge-83---adding-inline-code">CHALLENGE 8.3 - Adding inline code</h2>
+  <h2 id="challenge-73---adding-inline-code">CHALLENGE 7.3 - Adding inline code</h2>
   <p>Suppose we would like to add some information to the sentence we have just adjusted in our manuscript. We would like to include the average for the variable <em>violation_count</em> present in the same dataset. Which inline code we would have to add to following sentence?</p>
 
   <p>The CSV file contains choice consistency data for ` <code class="language-plaintext highlighter-rouge">r nrow(bronars_simulation_data.csv)</code> ` simulated participants, that have been used to determine the power of our food-choice task design to detect choice consistency violations, which averaged ` <code class="language-plaintext highlighter-rouge">enter inline code here</code> `. 
@@ -831,7 +847,7 @@ What inline code would you enter? What number would replace the inline code?</p>
     </div>
   </div>
   <p class="text-muted text-right">
-    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-08 09:48:55 +1100.</i></small>
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-09 19:50:02 +1100.</i></small>
   </p>
 </footer>
 
