@@ -158,7 +158,12 @@ Now we are seeing what we would like: a figure without other output to show in o
  
 > ## CHALLENGE 7.1 - Rendering Codes (optional)
 > How will some hypothetical code render given the following options?
-> `{r global-chunk-challenge, eval = TRUE, include = FALSE}`
+> ```
+> {r}
+> #| label: global-chunk-challenge
+> #| eval = true
+> #| include = false
+> ```
 > 
 >> ## SOLUTION
 >> The expressions in the code chunk will be evaluated, but the outputed figures/plots will not be included in the rendered document.   
@@ -206,8 +211,13 @@ The caption information also resides at the top of a code chunk using the `#|` s
 >> ## SOLUTION
 >> so, you should end up with the following in your code chunk:
 >> ~~~
->> {r fig3-heartrate, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE, 
->> fig.cap = "Fig 3: Mean heart rate of stress and control groups at baseline and during intervention."}
+>> {r}
+>> #| label: fig3-heartrate
+>> #| echo: false
+>> #| message: false
+>> #| warning: false
+>> #| results: false,
+>> fig.cap: "Fig 3: Mean heart rate of stress and control groups at baseline and during intervention."
 >> ~~~
 >> {: .language-r}
 >> Set the option `fig.cap` to equal the text in double quotes.
