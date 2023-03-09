@@ -204,7 +204,7 @@ The caption information also resides at the top of a code chunk using the `#|` s
 
 **Don't forget to put the caption within quotes `""`.**
 
-> ## CHALLENGE 7.3: Add a caption to Figure 3
+> ## CHALLENGE 7.2: Add a caption to Figure 3
 > Let's add a caption to our heartrate figure. Add the caption:
 > 
 > "Fig 3: Mean heart rate of stress and control groups at baseline and during intervention."
@@ -271,7 +271,15 @@ Run the code again to make sure it works properly. Great! Let's move on to inlin
 
 What if you only need to make a quick calculation and adding a code chunk seems a little overkill?
 
-You can also include `r code` directly in your the text portion of your document. Say you are discussing some of the summary statistics in your manuscript, Quarto makes this possible through HTML/LaTeX inline code which allows you to calculate simple expressions integrated to your narrative. Inline code enables you to insert `r code` into your document to dynamically updated portions of your text. In other words, if your data set changes for any reason the code will automatically update the calculation specified. 
+You can directly include code into the text portion of your document with inline code, for example:
+
+```
+There are ` r sum(1:14) ` cats in the neighbourhood
+```
+
+We've had to put an extra space between the backticks ` and the code to prevent it from rendering so you can understand how to write inline code. You can copy that line into the test-code.qmd document then remove the spaces. If we render the test-code.qmd document, what change do we see?
+
+Say you are discussing some of the summary statistics in your manuscript, Quarto makes this possible through HTML/LaTeX inline code which allows you to calculate simple expressions integrated to your narrative. Inline code enables you to insert `r code` into your document to dynamically updated portions of your text. In other words, if your data set changes for any reason the code will automatically update the calculation specified. 
 
 This can be helpful when referring to specific variables on your data. For example, you should include numbers that are derived from the data as code not as numbers. Thus, rather than writing “The CSV file contains choice consistency data for 10.000 simulated participants” **(Example 7)** , replace the static number with a bit of code that, when evaluated, gives you a dynamic number if anything changes on your dataset. Note that there is not an insert option to do this from the menu in the visual editor, so we need to insert inline code manually with  ```r ```, for example:
 
@@ -289,7 +297,7 @@ bronars_simulation_data <- read_csv("data/bronars_simulation_data.csv")
 > If you update your dataset this value will match the number of rows. 
 {: .checklist}
 
-> ## CHALLENGE 8.3 - Adding inline code
+> ## CHALLENGE 7.3 - Adding inline code
 > Suppose we would like to add some information to the sentence we have just adjusted in our manuscript. We would like to include the average for the variable *violation_count* present in the same dataset. Which inline code we would have to add to following sentence?
 > 
 > The CSV file contains choice consistency data for ` `r nrow(bronars_simulation_data.csv)` ` simulated participants, that have been used to determine the power of our food-choice task design to detect choice consistency violations, which averaged ` `enter inline code here` `. 
