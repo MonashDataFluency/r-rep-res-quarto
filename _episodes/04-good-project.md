@@ -118,7 +118,7 @@ For our project we’re working in today, we used the following setup for folder
 
 > ## Challenge 4.1: Take a few minutes to look through the workshop project files
 > 
-> Please take some time to look through the project files. Either the screenshot above, or you may browse the files on GitHub at <[https://github.com/carpentries-incubator/Reproducible-Publications-with-RStudio-Example/tree/quarto](https://github.com/carpentries-incubator/Reproducible-Publications-with-RStudio-Example/tree/quarto)>. What do each of the directories (folders) contain? What is their purpose? 
+> Please take some time to look through the project files. Either the screenshot above, or you may browse the files on GitHub at <https://github.com/MonashDataFluency/r-rep-res-quarto-example>. What do each of the directories (folders) contain? What is their purpose? 
 > 
 > See the solution drop-down for an explanation of each directory's contents.
 >
@@ -184,6 +184,36 @@ Adapted from [https://datacarpentry.org/rr-organization1/01-file-naming/index.ht
 {: .challenge}
 
 #### **Use relative paths**  
+
+A path specifies a series of steps to a file. It consists of a series of directory names, and finally a filename, separated by `/`. Windows traditionally uses `\` as the separator, but in R we can always use `/`.
+
+Absolute paths start with `/` on Mac or Linux, denoting the "root" directory. On Windows, absolute paths start with a drive letter such as `C:`. We will try to avoid using absolute paths.
+
+Whenever R is running, it has a current working directory, which you can check with `getwd()`. Relative paths don't start with `/` or `C:`, and refer to directories and files relative to the current working directoy.
+
+For example we might read a file using a relative path like:
+
+```
+df <- read.csv("data/foodchoice_budgetlines.csv")
+```
+
+whereas an absolute path might look like:
+
+```
+# Windows
+df <- read.csv("C:/Users/wilma/Desktop/project23/data/foodchoice_budgetlines.csv")
+
+# Mac
+df <- read.csv("/Users/wilma/Desktop/project23/data/foodchoice_budgetlines.csv")
+```
+
+You can also use the special direcory name `..` to refer to the parent directory, eg `../project22/data/foo.csv`.
+
+**We will try to always run code with our project directory as the current working directory.**
+
+Quarto documents by default set the working directory to the directory containing the document. In a later section we will discuss how to disable this annoying behaviour! (An older solution to this problem involved use of a package called `here` to find files relative to the project directory.)
+
+<!--
 This goes hand-in-hand with keeping your project within one “root” directory. If you use complete paths to say, read in your data to RStudio and then share your code with a collaborator, they won’t be able to run it because the complete path you used is unique to your system and they will receive an error that the file is not found. That is why one should always use relative paths to link to other files in the project, i.e. “where is my data file in relation to the script I’m reading the data into?”. The practice of using relative paths is made easier by having a logical directory set up and keeping all project files within one root project folder. 
 
 Assuming your R script is in a `code` directory and your data file is in a `data` directory then an example of a relative path to read your data would be:
@@ -228,6 +258,7 @@ In the complete path example you can see that the code is not going to be portab
 - Read the CRAN documentation here: [here](https://cran.r-project.org/web/packages/here/vignettes/here.html)
 - [Read more about how the `here` package can be useful for R Markdown and Quarto files specifically](http://jenrichmond.rbind.io/post/how-to-use-the-here-package/)
 {: .callout}
+-->
 
 #### **Treat data as read only**  
 This is probably the most important goal of setting up a project. Data is typically time consuming and/or expensive to collect. Working with them interactively (e.g., in Excel or R) where they can be modified means you are never sure of where the data came from, or how it has been modified since collection. It is therefore a good idea to treat your data as “read-only”. However, in many cases your data will be “dirty”: it will need significant preprocessing to get into a format R (or any other programming language) will find useful. Storing these scripts in a separate folder, and creating a second “read-only” data folder to hold the “cleaned” data sets can prevent confusion between the two sets. You should have separate folders for each: raw data, code, and output data/analyses. You wouldn’t mix your clean laundry with your dirty laundry, right?  
