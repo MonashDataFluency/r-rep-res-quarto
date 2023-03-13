@@ -120,7 +120,7 @@ Let's see how it looks in our paper to add the options from our first code chunk
 {: .callout}
 
 
-> ## CHALLENGE 7.4 (optional) global & individual code chunk options  
+> ## Challenge 8.1 (optional) global & individual code chunk options  
 >
 > How would appear in our html document if we render a code chunk with the following options?  
 > ```
@@ -295,21 +295,23 @@ Success! And you'll notice that the global code chunk options were applied to th
 >
 {: .callout}
 
-> ##  8.3: Your turn! Create Figure 4 with the external code
+> ##  Challenge 8.3: Your turn! Create Figure 4 with the external code
 > 
 > First, find `Example 9` in the qmd document for Fig 4 (ctrl-f "Example 9"). We need to add the code for the hormone analysis.
 >
 > Make sure to give the code chunk a name: `fig4-hormones` and a caption: `"Fig 4: Cortisol and Amylase levels in stress and control groups"`
 >
-> > ## Solution:
-> > ~~~
-> > {r fig4-hormones, fig.cap = "Fig 4: Cortisol and Amylase levels in stress and control groups" }
-> > # run the code from 02_hormone_analysis.R in the code directory
-> > source("code/02_hormone_analysis.R", local = knitr::knit_global())
-> > # display the plot created by code in 02_hormone_analysis.R
-> > plot 
-> > ~~~
-> > {: .language-r}
+>> ## Solution:
+>> ~~~
+>> {r}
+>> #| label: fig4-hormones
+>> #| fig.cap: "Fig 4: Cortisol and Amylase levels in stress and control groups"
+>> # run the code from 02_hormone_analysis.R in the code directory
+>> source("code/02_hormone_analysis.R", local = knitr::knit_global())
+>> # display the plot created by code in 02_hormone_analysis.R
+>> plot 
+>> ~~~
+>> {: .language-r}
 > {: .solution}
 {: .challenge}
 
