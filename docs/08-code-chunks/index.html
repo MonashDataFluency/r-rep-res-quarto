@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2023-03-13 19:58:31 +1100">
+    <meta http-equiv="last-modified" content="2023-03-13 20:02:32 +1100">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -478,7 +478,7 @@ execute:
 </blockquote>
 
 <blockquote class="challenge">
-  <h2 id="challenge-74-optional-global--individual-code-chunk-options">CHALLENGE 7.4 (optional) global &amp; individual code chunk options</h2>
+  <h2 id="challenge-81-optional-global--individual-code-chunk-options">Challenge 8.1 (optional) global &amp; individual code chunk options</h2>
 
   <p>How would appear in our html document if we render a code chunk with the following options?</p>
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{r} 
@@ -657,7 +657,7 @@ Try it out!</p>
 </blockquote>
 
 <blockquote class="challenge">
-  <h2 id="83-your-turn-create-figure-4-with-the-external-code">8.3: Your turn! Create Figure 4 with the external code</h2>
+  <h2 id="challenge-83-your-turn-create-figure-4-with-the-external-code">Challenge 8.3: Your turn! Create Figure 4 with the external code</h2>
 
   <p>First, find <code class="language-plaintext highlighter-rouge">Example 9</code> in the qmd document for Fig 4 (ctrl-f “Example 9”). We need to add the code for the hormone analysis.</p>
 
@@ -665,7 +665,9 @@ Try it out!</p>
 
   <blockquote class="solution">
     <h2 id="solution-2">Solution:</h2>
-    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="n">r</span><span class="w"> </span><span class="n">fig4</span><span class="o">-</span><span class="n">hormones</span><span class="p">,</span><span class="w"> </span><span class="n">fig.cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Fig 4: Cortisol and Amylase levels in stress and control groups"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="n">r</span><span class="p">}</span><span class="w">
+</span><span class="c1">#| label: fig4-hormones</span><span class="w">
+</span><span class="c1">#| fig.cap: "Fig 4: Cortisol and Amylase levels in stress and control groups"</span><span class="w">
 </span><span class="c1"># run the code from 02_hormone_analysis.R in the code directory</span><span class="w">
 </span><span class="n">source</span><span class="p">(</span><span class="s2">"code/02_hormone_analysis.R"</span><span class="p">,</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">knitr</span><span class="o">::</span><span class="n">knit_global</span><span class="p">())</span><span class="w">
 </span><span class="c1"># display the plot created by code in 02_hormone_analysis.R</span><span class="w">
@@ -792,7 +794,7 @@ Try it out!</p>
     </div>
   </div>
   <p class="text-muted text-right">
-    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-13 19:58:31 +1100.</i></small>
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-13 20:02:32 +1100.</i></small>
   </p>
 </footer>
 
