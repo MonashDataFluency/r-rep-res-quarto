@@ -161,8 +161,8 @@ Now we are seeing what we would like: a figure without other output to show in o
 > ```
 > {r}
 > #| label: global-chunk-challenge
-> #| eval = true
-> #| include = false
+> #| eval: true
+> #| include: false
 > ```
 > 
 >> ## SOLUTION
