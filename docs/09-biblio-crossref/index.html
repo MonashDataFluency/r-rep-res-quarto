@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2023-03-13 20:02:32 +1100">
+    <meta http-equiv="last-modified" content="2023-09-18 10:10:29 +1000">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -515,6 +515,15 @@ render the document and voiala!
 In case you are including a citation to <code class="language-plaintext highlighter-rouge">nocite</code> that you have not cited in the document, you have to make sure first that the bib file is in your Bibliography folder.</p>
 </blockquote>
 
+<blockquote class="checklist">
+  <h2 id="tip">Tip:</h2>
+  <blockquote>
+    <p>Depending on the bibliography style, BibTeX converts all characters in the title to lowercase, except for the first character. If you want to override this, wrap the character(s) you wish to show in upper case, in curly braces.</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title = "Pascal, {C}, {Java}: were they all conceived in {ETH}?" 
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
 <h2 id="adding-cross-referencing">Adding Cross-referencing</h2>
 
 <p>Cross-referencing is a useful way of directing your readers through your document, and it can be accomplished in Quarto. You may create cross-references to figures, tables, equations, sections, code listings, theorems, proofs, and more.</p>
@@ -673,7 +682,7 @@ And then, enter the @fig-id where you want to note the cross-referece in your pa
     </div>
   </div>
   <p class="text-muted text-right">
-    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-13 20:02:32 +1100.</i></small>
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-09-18 10:10:29 +1000.</i></small>
   </p>
 </footer>
 

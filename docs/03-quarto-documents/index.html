@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2023-03-13 20:02:32 +1100">
+    <meta http-equiv="last-modified" content="2023-09-18 10:10:29 +1000">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -459,6 +459,19 @@ execute:
 
 <p><img src="../fig/03-qmd-template-text.png" alt="qmd template text" /><br /></p>
 
+<blockquote class="callout">
+  <h2 id="a-note-about-coding-approaches-in-rstudio">A note about coding approaches in RStudio:</h2>
+  <p>When writing code in Rstudio, there are different workflows you can use, including writing code directly in the console, using a separate R script, or writing your code in a .qmd file. The best approach depends on your specific needs and preferences:</p>
+
+  <ul>
+    <li><em>Writing code directly in the console</em> is useful when you want to execute code immediately to see the effect of a statement, make a quick change or calculation. However, keeping track of your written code can be challenging, especially if it takes multiple lines. Additionally, if you need to run the same code multiple times, you’ll have to rewrite it each time, which can be inconvenient if you plan to reuse it.</li>
+    <li><em>Using a separate R script</em> is a more organized way to write and save code, and you can easily reuse it later or share it with others. You can easily edit and rerun the script if you need to modify the code. However, running code in a script requires more steps than running code in the console, and it can be more challenging to modify code interactively.</li>
+    <li><em>Using a .qmd file</em> combines the advantages of both the console and R script. A .qmd file allows you to write . R code and text in the same document make it easier to organize and document your work. Additionally, you can run the code directly in the paper, which makes it easier to modify and rerun code interactively.</li>
+  </ul>
+
+  <p>We will use the third approach for most of this workshop since we focus on creating a reproducible paper.</p>
+</blockquote>
+
 <h3 id="4-rendering-your-qmd-document">4. Rendering your Qmd document:</h3>
 <p>Simply put, rendering is the process of converting a document into a file format or a medium that is paginated or has the concept of pages. Clicking the render button will compile the code, check for errors, and finally, output the type of file indicated in your yaml header. You may select the option “Render on Save” to see a preview of your document every time you save edits. Attention: your qmd document may not run and render as your indicated output if there are any errors in the document so it also functions somewhat as a code checker.
 <br /></p>
@@ -645,7 +658,7 @@ Alternatively, you may enter the following command in the terminal:
     </div>
   </div>
   <p class="text-muted text-right">
-    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-13 20:02:32 +1100.</i></small>
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-09-18 10:10:29 +1000.</i></small>
   </p>
 </footer>
 

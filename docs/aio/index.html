@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2023-03-13 20:02:32 +1100">
+    <meta http-equiv="last-modified" content="2023-09-18 10:10:29 +1000">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -859,6 +859,19 @@ execute:
 
 <p><img src="../fig/03-qmd-template-text.png" alt="qmd template text" /><br /></p>
 
+<blockquote class="callout">
+  <h2 id="a-note-about-coding-approaches-in-rstudio">A note about coding approaches in RStudio:</h2>
+  <p>When writing code in Rstudio, there are different workflows you can use, including writing code directly in the console, using a separate R script, or writing your code in a .qmd file. The best approach depends on your specific needs and preferences:</p>
+
+  <ul>
+    <li><em>Writing code directly in the console</em> is useful when you want to execute code immediately to see the effect of a statement, make a quick change or calculation. However, keeping track of your written code can be challenging, especially if it takes multiple lines. Additionally, if you need to run the same code multiple times, you’ll have to rewrite it each time, which can be inconvenient if you plan to reuse it.</li>
+    <li><em>Using a separate R script</em> is a more organized way to write and save code, and you can easily reuse it later or share it with others. You can easily edit and rerun the script if you need to modify the code. However, running code in a script requires more steps than running code in the console, and it can be more challenging to modify code interactively.</li>
+    <li><em>Using a .qmd file</em> combines the advantages of both the console and R script. A .qmd file allows you to write . R code and text in the same document make it easier to organize and document your work. Additionally, you can run the code directly in the paper, which makes it easier to modify and rerun code interactively.</li>
+  </ul>
+
+  <p>We will use the third approach for most of this workshop since we focus on creating a reproducible paper.</p>
+</blockquote>
+
 <h3 id="4-rendering-your-qmd-document">4. Rendering your Qmd document:</h3>
 <p>Simply put, rendering is the process of converting a document into a file format or a medium that is paginated or has the concept of pages. Clicking the render button will compile the code, check for errors, and finally, output the type of file indicated in your yaml header. You may select the option “Render on Save” to see a preview of your document every time you save edits. Attention: your qmd document may not run and render as your indicated output if there are any errors in the document so it also functions somewhat as a code checker.
 <br /></p>
@@ -1523,7 +1536,7 @@ Let’s take a second to acquaint ourselves with GitHub. <a href="https://github
 
 <p><img src="../fig/05-fork.PNG" alt="fork on GitHub" /></p>
 
-<p>If you are a member of any organizations on GitHub, you will be asked whether you want to fork to your account or to an organization. Choose your personal account for this workshop. <!-- Un-check the option to "Copy the Main branch Only" as you want all branches. ![fork all branches](../fig/05-git-fork-all-branches.png) GitHub will process for a few moments and voila! You have your own copy of the workshop example repository. --></p>
+<p>If you are a member of any organizations on GitHub, you will be asked whether you want to fork to your account or to an organization. Choose your personal account for this workshop.  GitHub will process for a few moments and voila! You have your own copy of the workshop example repository.</p>
 
 <p>Now, click on the green <code class="language-plaintext highlighter-rouge">Code</code> drop-down and then click on the copy icon next to the repository url:</p>
 
@@ -1538,8 +1551,6 @@ Let’s take a second to acquaint ourselves with GitHub. <a href="https://github
 <p><img src="../fig/05-git-new-project-clone.png" alt="start my R project" /></p>
 
 <p>Now you have cloned a copy of your git repo from Github to your working environment.</p>
-
-<!-- One more step: Make sure to select the quarto branch in RStudio (on your local instance or Jupyter Hub) on the Git tab. ![Select Quarto Branch](../fig/05-selecting-quarto-branch.png) -->
 
 <p>If you’re working in the JupyterHub environment you will need to configure Git with your name and email before you’ll be able to commit the changes you make during this workshop.  Substitute your name and email address in the commands below and paste them into the Terminal panel of RStudio.</p>
 
@@ -1963,7 +1974,7 @@ Some Content in right column
 
 </blockquote>
 
-<h2 id="utilizing-the-code-features-of-quarto">Utilizing the Code Features of Quarto</h2>
+<h2 id="code-in-quarto-documents">Code in Quarto Documents</h2>
 
 <p>We’ve learned about the text-formatting options of Quarto, now let’s dive into the code portion of Quarto documents. Quarto flips the defaults of code and text - instead of priortizing the code and making you comment out (#) text such as in R scripts, they priortize text and force you to specially comment the code portions. How do you signal to R the difference between code and text when you’re not using code commments (#)? That’s where code chunks (or “code chunks” as RStudio calls them) come into play. Instead of Quarto’s rendering system processing the markdown styling into the final output, Code chunks are sent to a preceding stage of processing by Knitr, which “knits”/render the code output and text together. Secondly, Quarto processes the code output and displays it in the document format of our choice - i.e. Knitr runs the lines of code for a plot in a code chunk, joins it to the markdown text portions, and Quarto outputs that as an html document.</p>
 
@@ -1978,27 +1989,35 @@ Some Content in right column
 
 <p>First, we’re going to talk about code chunks for including substantial portions of code into our narrative such as to generate figures and plots. There are a plethora of options that become available to us when using code chunks so this tends to be the more complex part of Quarto documents. Now, sometimes you just need to do a quick calculation - like a count of total observations in your data or the mean of one of your variables. In those cases, it may not be worth setting up a code chunk to calculate those values, so after code chunks we will see how to add inline code - which allows one to add a quick line of code or single function to be executing within the text portion of the document. But let’s start with code chunks.</p>
 
-<h2 id="inserting-code-chunks">Inserting Code Chunks</h2>
+<h2 id="using-code-chunks">Using Code Chunks</h2>
 
 <p>Code chunks (also called “code blocks”) are the preferred option when you need to do something more sophisticated with your code than inline code, such as building plots or tables.  They also incorporate syntax which allows modifications to how that code is rendered and styled in your final output. We’ll learn more about that as we walk through the “anatomy” of a code chunk.</p>
 
-<h3 id="start-a-new-qmd-file">Start a new .qmd File</h3>
-<p>First, though, let’s open a new <code class="language-plaintext highlighter-rouge">.qmd</code> document to get a look at how code chunk work before integrating them into our paper.</p>
+<h3 id="add-a-code-chunk">Add a Code Chunk</h3>
 
-<p>Again, open a new document by navigating to <code class="language-plaintext highlighter-rouge">File &gt; New File &gt; Quarto Document</code>. Add the title <code class="language-plaintext highlighter-rouge">test-code</code>.</p>
+<p>Ok, let’s add some code! There are already some plots included in our code but as static images. Now, we will add some additional plots, but generated straight from R code - which are also more reproducible and easier to update than static images. Using code to generated images directly assures us that if there are any changes to the data or code the plots will update automatically. We also don’t have to generate the new plots, save them as images, and then add them back in to our paper. Not only is this a time-saver, but it helps to prevent version errors as well!</p>
 
-<p>Let’s first delete the generic text because we don’t need it at this point (all except the first code chunk that is - we’ll get back to that in a second).</p>
+<p>Navigate to the end of the paper where it says <strong>“Example 8”</strong>. This is where we will add our first code chunk.</p>
 
-<p><img src="../fig/07-empty-qmd-doc.png" alt="Default QMD just setup chunk" /></p>
+<p>Let’s all start a new code chunk by typing our our starting backticks &amp; r between curly brackets or by using the buttons available in the editor toolbar.</p>
+
+<blockquote>
+  <p><img src="../fig/07-auto-code-chunk.PNG" alt="auto create code chunk" /></p>
+</blockquote>
+
+<blockquote class="callout">
+  <h2 id="tip-four-ways-to-insert-code-chunks">Tip: Four ways to insert code chunks</h2>
+  <ul>
+    <li>the Add Chunk button in the editor toolbar  (looks like a green square with a C)</li>
+    <li>the Insert &gt; Code Chunk menu option in the editor toolbar</li>
+    <li>by typing the code chunk delimiters {r} and ```. *If you are in “editor” mode you will need to remember to end the code chunk with ending backticks as well ```.</li>
+    <li>the keyboard shortcut 
+    - Ctrl + Alt + I (Windows)
+    - Cmd + Option + I (Mac)</li>
+  </ul>
+</blockquote>
 
 <h3 id="basic-anatomy-of-a-code-chunk">Basic Anatomy of a Code Chunk</h3>
-
-<p>You can quickly insert chunks like these into your file with:</p>
-<ul>
-  <li>the keyboard shortcut Ctrl + Alt + I (OS X: Cmd + Option + I)</li>
-  <li>the Add Chunk command in the editor toolbar</li>
-  <li>or by typing the code chunk delimiters {r} and ```.</li>
-</ul>
 
 <p>The most basic (empty) code chunk looks like so:</p>
 
@@ -2006,26 +2025,16 @@ Some Content in right column
 
 <p>Other than backticks ``` for code chunks that surround the code top and bottom, the only <strong>required</strong> piece is the specified language (r) placed between the curly brackets. This indicates that the language to read the code is R.</p>
 
-<p>Let’s all start a new code chunk by typing our our starting backticks &amp; r between curly brackets. (in your own workflow you may want to add the ending three backticks as well so you don’t forget after adding your code - it’s a common mistake):</p>
-
 <blockquote class="callout">
   <h2 id="fun-fact-other-programming-languages">Fun fact: Other Programming Languages</h2>
   <p>Although we will (mostly) be using R in this workshop, it’s possible to use other programming or markup languages. For example, we have seen that we can use LaTeX code for equations. You can also use python and a handful of other languages, so if R is not your preferred programming, but you like working in the RStudio environment, don’t despair! Other options for languages include: sql, julia, bash, and c, etc. It should be noted however, that some languages (like python) will require installing and loading additional packages.</p>
 </blockquote>
 
-<h2 id="add-a-code-chunk">Add a Code Chunk</h2>
-
-<p>Ok, let’s add some code! There are already some plots included in our code but as static images. Now, we will add some additional plots, but generated straight from R code - which are also more reproducible and easier to update than static images. Using code to generated images directly assures us that if there are any changes to the data or code the plots will update automatically. We also don’t have to generate the new plots, save them as images, and then add them back in to our paper. Not only is this a time-saver, but it helps to prevent version errors as well!</p>
+<h2 id="add-the-code-to-our-paper">Add the code to our Paper</h2>
 
 <p>Now, let’s open our <code class="language-plaintext highlighter-rouge">03_HR_analysis.R</code> script in our <code class="language-plaintext highlighter-rouge">code</code> folder. We will insert the code of this script into our current working file. To do this, copy the code and paste it in-between the two lines with backticks and <code class="language-plaintext highlighter-rouge">{r}</code>.</p>
 
 <p><img src="../fig/07-heartrate-code.PNG" alt="heartrate code in chunk" /></p>
-
-<blockquote class="callout">
-  <h2 id="tip">Tip:</h2>
-  <p>There’s actually a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut <code class="language-plaintext highlighter-rouge">ctrl</code>+<code class="language-plaintext highlighter-rouge">alt</code>+<code class="language-plaintext highlighter-rouge">i</code> for Windows and <code class="language-plaintext highlighter-rouge">command</code>+<code class="language-plaintext highlighter-rouge">option</code>+<code class="language-plaintext highlighter-rouge">i</code> for Mac. 
-<img src="../fig/07-auto-code-chunk.PNG" alt="auto create code chunk" /></p>
-</blockquote>
 
 <h2 id="run-the-code-in-a-code-chunk">Run the code in a code chunk</h2>
 <p>Now, to check to make sure our code renders, we could click the “Render” button as we have been doing to check on the output of our Quarto file. However, with code chunks we have other options for running and debugging code that don’t require us to wait for the file to render.</p>
@@ -2094,13 +2103,35 @@ Some Content in right column
 
 <p>Run your code with one of the given methods.</p>
 
+<p>Well shoot! We’re getting an error:</p>
+
+<p><img src="../fig/07-path-code-error.png" alt="directory error code chunk" /></p>
+
+<p>If we go to the bottom of the code chunk we’ll see more details on the error:</p>
+
+<p><img src="../fig/07-path-error-details.png" alt="path error details" /></p>
+
+<p>This is a path error. The reason we’re seeing this is that our paper is located in the report/source directory while our test document was automatically created in the project root directory. The path from the report/source directory to the data we’re trying to read is not correct any longer.</p>
+
+<h3 id="fixing-relative-path-errors">Fixing Relative Path Errors</h3>
+
+<p>We can fix this by adding the correct relative path:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>df &lt;- read_csv("../output/data/preprocessed-GARP-TSST-data.csv")
+</code></pre></div></div>
+<p>Instead of:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>df &lt;- read_csv("output/data/preprocessed-GARP-TSST-data.csv")
+</code></pre></div></div>
+
+<p>Run the code again to make sure it works properly.</p>
+
 <p>Did it work? Look under the code chunk. You should now see a plot preview displayed beneath the code chunk if all went well.</p>
 
 <p><img src="../fig/07-plot-preview.png" alt="Code Chunk Plot Preview" /></p>
 
 <h2 id="rendering-code-chunks">Rendering Code Chunks</h2>
 
-<p>We just saw how to run our code in our code chunks to see a preview of the code output that will render in our html document but to actually render it we need to use the Render button. Using the <code class="language-plaintext highlighter-rouge">Render</code> button with code chunks is a two step process - first the code is run (all code chunks will run automatically). Second, (if there are no code errors) the document of choice will render for our whole Quarto document.</p>
+<p>We just saw how to run our code in our code chunks to test that it works and to see a preview of the code output that will render in our html document but to <em>actually</em> render the final we need to use the Render button as with. Using the <code class="language-plaintext highlighter-rouge">Render</code> button with code chunks is a two step process - first the code is run (all code chunks will run automatically). Second, (if there are no code errors) the document of choice will render for our whole Quarto document.</p>
 
 <blockquote class="checklist">
   <h2 id="time-to-render">Time to Render!</h2>
@@ -2152,8 +2183,8 @@ Some Content in right column
   <p>How will some hypothetical code render given the following options?</p>
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{r}
 #| label: global-chunk-challenge
-#| eval = true
-#| include = false
+#| eval: true
+#| include: false
 </code></pre></div>  </div>
 
   <blockquote class="solution">
@@ -2165,7 +2196,7 @@ If you need to calculate some value or do something on your dataset for a furthe
 </blockquote>
 
 <blockquote class="callout">
-  <h2 id="tip-1">Tip:</h2>
+  <h2 id="tip">Tip:</h2>
   <p>Find a complete list of code chunk options on Knitr developer, Yihui Xie’s, <a href="https://yihui.org/knitr/options/">online guide to knitr</a>.</p>
 </blockquote>
 
@@ -2238,30 +2269,6 @@ If you need to calculate some value or do something on your dataset for a furthe
   <h2 id="time-to-render-1">Time to Render!</h2>
   <p>Let’s try that again</p>
 </blockquote>
-
-<h2 id="add-the-code-to-our-paper">Add the code to our Paper</h2>
-
-<p>We tested the code for our heart rate plot in a new qmd document to save time on rendering while we experimented with it (for our paper it can take 1-2 min to render and that adds up!). Now let’s add the code into our paper document. Navigate to <code class="language-plaintext highlighter-rouge">Example 8</code> and create a new code chunk. Copy and paste the code from the test document into the paper. Go ahead and run the code to make sure it works.</p>
-
-<p>Well shoot! We’re getting an error:</p>
-
-<p><img src="../fig/07-path-code-error.png" alt="directory error code chunk" /></p>
-
-<p>If we go to the bottom of the code chunk we’ll see more details on the error:</p>
-
-<p><img src="../fig/07-path-error-details.png" alt="path error details" /></p>
-
-<p>This is a path error. The reason we’re seeing this is that our paper is located in the report directory while our test document was automatically created in the project root directory. The path from the report directory to the data we’re trying to read is not correct any longer.</p>
-
-<p>We can fix this by adding the correct relative path:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>df &lt;- read_csv("../output/data/preprocessed-GARP-TSST-data.csv")
-</code></pre></div></div>
-<p>Instead of:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>df &lt;- read_csv("output/data/preprocessed-GARP-TSST-data.csv")
-</code></pre></div></div>
-
-<p>Run the code again to make sure it works properly. Great! Let’s move on to inline code.</p>
 
 <h2 id="inline-code">Inline Code</h2>
 
@@ -2919,6 +2926,15 @@ render the document and voiala!
 In case you are including a citation to <code class="language-plaintext highlighter-rouge">nocite</code> that you have not cited in the document, you have to make sure first that the bib file is in your Bibliography folder.</p>
 </blockquote>
 
+<blockquote class="checklist">
+  <h2 id="tip">Tip:</h2>
+  <blockquote>
+    <p>Depending on the bibliography style, BibTeX converts all characters in the title to lowercase, except for the first character. If you want to override this, wrap the character(s) you wish to show in upper case, in curly braces.</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title = "Pascal, {C}, {Java}: were they all conceived in {ETH}?" 
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
 <h2 id="adding-cross-referencing">Adding Cross-referencing</h2>
 
 <p>Cross-referencing is a useful way of directing your readers through your document, and it can be accomplished in Quarto. You may create cross-references to figures, tables, equations, sections, code listings, theorems, proofs, and more.</p>
@@ -3329,7 +3345,7 @@ with a URL similar to: <code class="language-plaintext highlighter-rouge">https:
     </div>
   </div>
   <p class="text-muted text-right">
-    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-03-13 20:02:32 +1100.</i></small>
+    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: 2023-09-18 10:10:29 +1000.</i></small>
   </p>
 </footer>
 
