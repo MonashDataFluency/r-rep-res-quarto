@@ -1,0 +1,153 @@
+---
+title: "Reproducible Research in R with Quarto"
+subtitle: "Some history and context"
+format: 
+    revealjs:
+        fontsize: "25px"
+        theme: "default"
+---
+
+##
+
+- How can we make beautiful documents?
+- Specifically, how would a programmer solve this problem?
+<br>
+<br>
+
+- These slides will focus on open standards with open source implementations.
+- The input is always going to be a plain text document, with some special "markup".
+
+## TeX and LaTeX
+
+<style>
+.reveal h2 { color: #0000ff; }
+</style>
+
+- 1978: In the beginning, Donald Knuth wanted to write some computer science textbooks, so he created TeX.
+- 1980s: System further devloped into LaTeX.
+- Write papers and books with beautiful text and mathematics.
+- Output is usually PDF. <small>(see [XKCD 2304](https://xkcd.com/2304/))</small>
+
+Looks like:
+
+```
+\section{Introduction}
+
+In this paper we will consider $x$ and $y$.
+
+\begin{itemize}
+\item List item 1.
+\item List item 2.
+\end{itemize}
+
+\begin{figure}
+\includegraphics{graph1}
+\caption{An example graph.}
+\label{fig:graph1}
+\end{figure}
+```
+
+
+## Documents on the World Wide Web
+
+- 1990: The World Wide Web was invented and used HTML (HyperText Markup Language).
+
+Looks like:
+
+```
+<h1>Introduction</h1>
+
+<p>In this paper we will consider <i>x</i> and <i>y</i>.</p>
+
+<ul>
+   <li>List item 1.</li>
+   <li>List item 2.</li>
+</ul>
+
+<img src="graph1.png">
+```
+
+## Markdown
+
+- HTML is ok, but people wanted more concise formats.
+- People wanted documents that looked *ok* in a plain text editor, and lovely in a web browser.
+- A lot of different formats were proposed and used in blogging software, forum software, documentation systems, ...
+- We have now more or less settled on "Markdown" (2004).
+
+Looks like:
+
+```
+# Introduction
+
+In this paper we will consider *x* and *y*.
+
+- List item 1.
+- List item 2.
+
+![Some alt-text](graph1.png)
+```
+
+
+## Literate programming
+
+Donald Knuth had another important idea, *literate programming*.
+
+<small>(The idea has developed a bit since Knuth introduced it though.)</small>
+<br>
+<br>
+
+From a source text file we will *weave* together a beautiful document:
+
+* Nicely formatted text.
+* Code, to precisely document what we did.
+* Output from the code such as tables and plots.
+<br>
+<br>
+
+We will also call this *knitting* or *rendering*.
+
+The end result might be:
+
+* An HTML document or website.
+* A PDF document (using LaTeX).
+* A Word document.
+
+
+## Quarto
+
+* **Quarto** (2022) is the latest iteration of these ideas about creating documents by writing plain text, and literate programming.
+
+* Builds on top of various older packages, so we will see reference to older `knitr` and `rmarkdown` packages.
+
+* Allows literate programming in R, Python, other languages.
+
+* Can output many formats, output different formats from same source.
+  * HTML document
+  * HTML website such as a book
+  * PDF (using LaTeX)
+  * Word Document
+
+Quarto is developed by Posit (formerly known as RStudio).
+
+
+## Structured data as text
+
+- XML (1990s) is like HTML for data. 
+  - Easily usable by both people and software!
+  - People became very excited about XML for a while.
+  - Turned out to actually be awful for both people and software.
+<br>
+<br>
+
+- JSON (2000s) represents data as you would in Javascript.
+  - Also very similar to how Python represents data, and `list`s in R.
+  - JSON was better, but still a bit ugly.
+<br>
+<br>
+
+- YAML (2001) makes some JSON punctuation optional, uses indentation like Python.
+  - YAML has some advanced features you can ignore.
+  - YAML is a popular configuration format.
+  - YAML is... fine. 
+  - Quarto uses YAML for configuration, in the header of documents and in the `_quarto.yml` configuration file.
+

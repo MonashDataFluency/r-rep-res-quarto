@@ -148,11 +148,11 @@ Let’s try!
 > 
 > > ## Solution
 > >
-> > You should call the @stringi2022 it in the YAML, with the nocite function:
+> > You should specify @stringi2022 in the nocite section of the YAML header:
 > >
 > > ```
 > > nocite: |
-> >  @Tidyverse2019
+> >   @stringi2022
 > > ```
 > > {: .output}
 > >
