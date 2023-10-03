@@ -14,7 +14,7 @@ format:
 <br>
 <br>
 
-- These slides will focus on open standards with open source implementations.
+- These slides will focus on open standards with open-source implementations.
 - The input is always going to be a plain text document, with some special "markup".
 
 ## TeX and LaTeX
@@ -50,7 +50,7 @@ In this paper we will consider $x$ and $y$.
 
 ## Documents on the World Wide Web
 
-- 1990: The World Wide Web was invented and used HTML (HyperText Markup Language).
+- 1990: Tim Berners-Lee invented the World Wide Web and HTML (HyperText Markup Language).
 
 Looks like:
 
@@ -105,12 +105,6 @@ From a source text file we will *weave* together a beautiful document:
 <br>
 
 We will also call this *knitting* or *rendering*.
-
-The end result might be:
-
-* An HTML document or website.
-* A PDF document (using LaTeX).
-* A Word document.
 
 
 ## Quarto
