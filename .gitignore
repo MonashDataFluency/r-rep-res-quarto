@@ -4,3 +4,5 @@ Gemfile.lock
 _site/
 Reproducible-Publications-with-RStudio-Quarto.Rproj
 .Rproj.user
+
+/.quarto/

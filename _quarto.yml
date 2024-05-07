@@ -1,0 +1,11 @@
+
+project:
+    execute-dir: "project"     # Working directory always the same.
+    output-dir: "docs"       # HTML files go in this directory.
+
+format:
+    html:
+        toc: true                # Table of contents.
+        code-fold: true          # Initially hide code.
+        embed-resources: true    # Ensure HTML files are fully self-contained.
+

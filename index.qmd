@@ -1,0 +1,16 @@
+---
+title: "Monash Data Fluency: Reproducible Research in R (with Quarto)"
+theme: cerulean
+---
+
+We will be working through this material on the Carpentries incubator site:
+
+* [Workshop material](https://carpentries-incubator.github.io/reproducible-publications-quarto/index.html){target="_blank"}
+
+We will use this example GitHub repository:
+
+* <https://github.com/carpentries-incubator/quarto-project-example>{target="_blank"}
+
+Some slides to put things in context:
+
+* [Slides](slideshow.html){target="_blank"}
