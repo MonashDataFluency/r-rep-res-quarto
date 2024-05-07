@@ -123,6 +123,11 @@ We will also call this *knitting* or *rendering*.
 
 Quarto is developed by Posit (formerly known as RStudio).
 
+<br><br>
+<small>
+Similar ideas: Jupyter Notebooks in Python, Observable in Javascript
+</small>
+
 
 ## Structured data as text
 
