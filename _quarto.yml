@@ -6,6 +6,6 @@ project:
 format:
     html:
         toc: true                # Table of contents.
-        code-fold: true          # Initially hide code.
+        code-fold: false         # Initially hide code.
         embed-resources: true    # Ensure HTML files are fully self-contained.
 

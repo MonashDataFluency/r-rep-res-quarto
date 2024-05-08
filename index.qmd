@@ -3,6 +3,13 @@ title: "Monash Data Fluency: Reproducible Research in R (with Quarto)"
 theme: cerulean
 ---
 
+
+<br>
+<br>
+<br>
+
+## Workshop material
+
 We will be working through this material on the Carpentries incubator site:
 
 * [Workshop material](https://carpentries-incubator.github.io/reproducible-publications-quarto/index.html){target="_blank"}
@@ -14,3 +21,89 @@ We will use this example GitHub repository:
 Some slides to put things in context:
 
 * [Slides](slideshow.html){target="_blank"}
+
+<br>
+<br>
+<br>
+
+## Bits and pieces
+
+[Quarto reference](https://quarto.org/docs/reference/)
+
+[Quarto markdown overview](https://quarto.org/docs/authoring/markdown-basics.html)
+
+[Quarto user guides](https://quarto.org/docs/guide/) ← topics give a good idea of what is possible!
+
+[Quarto cross-references](https://quarto.org/docs/authoring/cross-references.html) ← a useful but hard to discover feature
+
+<br>
+
+[More information on the BibTex format](https://www.bibtex.com/format/)
+
+[More information about writing equations](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+
+[An online equation editor](https://latexeditor.lagrida.com/)
+
+<br>
+
+[Monash themed Quarto templates by Rob Hyndman](https://robjhyndman.com/hyndsight/quarto_templates.html)
+
+
+[Example of a peer-reviewed "knitted" publication](https://f1000research.com/articles/5-1408)
+
+[Example of a GitHub repository associated with a publication](https://github.com/czbiohub/tabula-muris)
+
+[Example of workshop material (in bookdown)](https://github.com/swbioinf/scRNAseqInR_Doco/)
+<br>(Jointly developed by University of Queensland and Monash, check the [commit log](https://github.com/swbioinf/scRNAseqInR_Doco/commits/main)!)
+
+<br>
+<br>
+
+### _quarto.yml file required for this workshop
+
+```
+project:
+    execute-dir: "project"
+```
+
+<br>
+<br>
+
+### _quarto.yml suggested further settings
+
+```
+project:
+    execute-dir: "project"     # Working directory always the same.
+    output-dir: "output"       # HTML files go in this directory.
+#    render:                    # Specify order of rendering.
+#    - "report/preprocess.qmd"
+#    - "report/my-report.qmd"
+
+format:
+    html:
+        toc: true                # Table of contents.
+        code-fold: true          # Initially hide code.
+        fontsize: "10pt"         # Smaller font.
+        embed-resources: true    # Ensure HTML files are fully self-contained.
+```
+
+After editing `_quarto.yml`, you may need to close and re-open your project in RStudio.
+
+If you specify the order of rendering, the whole project can be run in the correct order in a single step. In RStudio this can be done in the "Build" pane with the "Render Project" button. On the command line it can be done with:
+
+```
+quarto render
+```
+
+<br>
+<br>
+
+### Nice looking tables
+
+The default appearance of tables produced by code chunks is a bit plain. Try these instead, and look at their documentation for how to customize the output further.
+
+```{r}
+knitr::kable(mtcars)
+
+DT::datatable(mtcars)
+```
