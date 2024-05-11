@@ -26,6 +26,78 @@ Some slides to put things in context:
 <br>
 <br>
 
+## Setup
+
+You can use RStudio on your own laptop (preferred) or use [Posit Cloud](https://posit.cloud/). If using RStudio on your own laptop, follow the software installation instructions below. If using Posit Cloud, please still do steps 3 and 4 below.
+
+If you have a Monash University supplied laptop, you may need to submit a service request to eSolutions to be allowed to install software. For now, use Posit Cloud.
+
+**1. Install [R](https://cran.r-project.org/index.html)**
+
+**2. Install [RStudio](https://posit.co/download/rstudio-desktop/)**
+
+**3. In RStudio, run this R code to install some packages:**
+
+```{r}
+#| eval: false
+install.packages(
+    c("quarto","tidyverse","BayesFactor","patchwork","renv"))
+```
+
+**4. Create an account on [GitHub](https://github.com/)** if you don't already have one.
+
+**5. Install git:**
+
+**Windows** users should install Git for Windows (includes Git Credential Manager*).
+
+**Mac** users should install Apple's Xcode command line tools, which includes git. This is also worthwhile because it will let you install R packages that need compilation. Open the Terminal app, type the command below, and press return:
+
+```
+xcode-select --install
+```
+
+(Mac users can also the binary installer here: ​​https://git-scm.com/download/mac. It is slightly out of date but should be fine. This method will be faster.)
+
+Mac users should also install Git Credential Manager*: [download page](https://github.com/git-ecosystem/git-credential-manager/releases/), [installation instructions](https://github.com/GitCredentialManager/git-credential-manager/blob/release/docs/install.md). Download and open the appropriate ".pkg" file for your machine, gcm-osx-arm64-...pkg if you have an M1 or M2 mac, gcm-osx-x64-...pkg otherwise.
+
+* Git Credential Manager should let us push (upload) changes to repositories on GitHub using the https method. Otherwise we would need to set up an ssh key to push changes, which is beyond the scope of this workshop.
+
+::: {style="font-size: 75%"}
+There is also an alternative method using tokens:
+
+Log in to github.com
+<br>→ Settings
+<br>→ Developer settings
+<br>→ Access tokens
+<br>→ Fine-grained personal access tokens (beta)
+<br>→ Generate new token
+
+Select:
+
+* Repository access:
+    * only select repositories → the repository we are working on
+* Repository permissions:
+    * commit statuses → access level: read & write
+    * contents → access level: read & write
+
+When pushing from RStudio, paste the token when prompted for a password.
+:::
+
+If you run into problems installing any of these, you can use Posit Cloud for the workshop.
+
+### Optional further software
+
+RStudio comes bundled with Quarto and LaTeX, but you can install them separately if you want to use them from the command line. LaTeX is used to create PDFs. We won't use this in the workshop.
+
+* [Install Quarto](https://quarto.org/docs/get-started/)
+* [Install the TinyTeX version of LaTeX using Quarto](https://quarto.org/docs/output-formats/pdf-engine.html)
+
+
+
+<br>
+<br>
+<br>
+
 ## Bits and pieces
 
 [Quarto reference](https://quarto.org/docs/reference/)
