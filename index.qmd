@@ -60,15 +60,22 @@ xcode-select --install
 
 Mac users should also install Git Credential Manager*: [download page](https://github.com/git-ecosystem/git-credential-manager/releases/), [installation instructions](https://github.com/GitCredentialManager/git-credential-manager/blob/release/docs/install.md). Download and open the appropriate ".pkg" file for your machine, gcm-osx-arm64-...pkg if you have an M1 or M2 mac, gcm-osx-x64-...pkg otherwise.
 
-::: {style="font-size: 75%"}
 &nbsp;* Git Credential Manager should let us push (upload) changes to repositories on GitHub using the https method. Otherwise we would need to set up an ssh key to push changes, which is beyond the scope of this workshop.
 
-There is also an alternative method to push changes to GitHub using tokens:
+If you run into problems installing any of these, you can use Posit Cloud for the workshop.
+
+
+### Authentication without Git Credential Manager
+
+There is an alternative method to push changes to GitHub using tokens.
+
+This method will also work from Posit Cloud.
 
 Log in to github.com
+<br>→ Click the top right corner to open your account menu
 <br>→ Settings
 <br>→ Developer settings
-<br>→ Access tokens
+<br>→ Personal access tokens
 <br>→ Fine-grained personal access tokens (beta)
 <br>→ Generate new token
 
@@ -80,10 +87,14 @@ Select:
     * commit statuses → access level: read & write
     * contents → access level: read & write
 
-When pushing from RStudio, paste the token when prompted for a password.
-:::
+In the Terminal pane in RStudio you need to configure who you are for git with the following (filling in your details):
 
-If you run into problems installing any of these, you can use Posit Cloud for the workshop.
+```
+git config --global user.email "your.email@monash.edu"
+git config --global user.name "your_github_username"
+```
+
+When pushing from RStudio, enter your GitHub username and then paste the token when prompted for a password.
 
 ### Optional further software
 
