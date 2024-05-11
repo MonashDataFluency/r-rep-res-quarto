@@ -434,26 +434,29 @@ In this paper we will consider *x* and *y*.
 </section>
 <section id="structured-data-as-text" class="slide level2">
 <h2>Structured data as text</h2>
-<ul>
-<li>XML (1990s) is like HTML for data.
-<ul>
-<li>Easily usable by both people and software!</li>
-<li>People became very excited about XML for a while.</li>
-<li>Turned out to actually be awful for both people and software. <br> <br></li>
-</ul></li>
-<li>JSON (2000s) represents data as you would in Javascript.
-<ul>
-<li>Also very similar to how Python represents data, and <code>list</code>s in R.</li>
-<li>JSON was better, but still a bit ugly. <br> <br></li>
-</ul></li>
-<li>YAML (2001) makes some JSON punctuation optional, uses indentation like Python.
-<ul>
-<li>YAML has some advanced features you can ignore.</li>
-<li>YAML is a popular configuration format.</li>
-<li>YAML is… fine.</li>
-<li>Quarto uses YAML for configuration, in the header of documents and in the <code>_quarto.yml</code> configuration file.</li>
-</ul></li>
-</ul>
+<pre><code>&lt;xml&gt; 
+    XML (1990s) is like HTML for data. 
+    &lt;item&gt;Easily usable by both people and software!&lt;/item&gt;
+    &lt;item&gt;People became very excited about XML for a while.&lt;/item&gt;
+    &lt;item&gt;Turned out to actually be awful for both people and software.&lt;/item&gt;
+&lt;/xml&gt;
+
+
+{ 
+    "JSON" : "JSON (2000s) represents data as you would in Javascript.",
+    "items" : [
+        "Also very similar to how Python represents data, and lists in R.",
+        "JSON was better, but still a bit ugly.",
+    ]
+}
+
+
+YAML: "YAML (2001) makes some JSON punctuation optional, uses indentation like Python."
+items:
+  - YAML has some advanced features you can ignore.
+  - YAML is a popular configuration format.
+  - YAML is... fine. 
+  - Quarto uses YAML for configuration, in the header of documents and in the _quarto.yml configuration file.</code></pre>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 

@@ -131,22 +131,28 @@ Similar ideas: Jupyter Notebooks in Python, Observable in Javascript
 
 ## Structured data as text
 
-- XML (1990s) is like HTML for data. 
-  - Easily usable by both people and software!
-  - People became very excited about XML for a while.
-  - Turned out to actually be awful for both people and software.
-<br>
-<br>
+```
+<xml> 
+    XML (1990s) is like HTML for data. 
+    <item>Easily usable by both people and software!</item>
+    <item>People became very excited about XML for a while.</item>
+    <item>Turned out to actually be awful for both people and software.</item>
+</xml>
 
-- JSON (2000s) represents data as you would in Javascript.
-  - Also very similar to how Python represents data, and `list`s in R.
-  - JSON was better, but still a bit ugly.
-<br>
-<br>
 
-- YAML (2001) makes some JSON punctuation optional, uses indentation like Python.
+{ 
+    "JSON" : "JSON (2000s) represents data as you would in Javascript.",
+    "items" : [
+        "Also very similar to how Python represents data, and lists in R.",
+        "JSON was better, but still a bit ugly.",
+    ]
+}
+
+
+YAML: "YAML (2001) makes some JSON punctuation optional, uses indentation like Python."
+items:
   - YAML has some advanced features you can ignore.
   - YAML is a popular configuration format.
   - YAML is... fine. 
-  - Quarto uses YAML for configuration, in the header of documents and in the `_quarto.yml` configuration file.
-
+  - Quarto uses YAML for configuration, in the header of documents and in the _quarto.yml configuration file.
+```

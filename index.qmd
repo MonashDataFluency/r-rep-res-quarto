@@ -41,7 +41,7 @@ If you have a Monash University supplied laptop, you may need to submit a servic
 ```{r}
 #| eval: false
 install.packages(
-    c("quarto","tidyverse","BayesFactor","patchwork","renv"))
+    c("quarto","tidyverse","BayesFactor","patchwork","renv","usethis"))
 ```
 
 **4. Create an account on [GitHub](https://github.com/)** if you don't already have one.
