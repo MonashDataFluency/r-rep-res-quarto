@@ -60,10 +60,10 @@ xcode-select --install
 
 Mac users should also install Git Credential Manager*: [download page](https://github.com/git-ecosystem/git-credential-manager/releases/), [installation instructions](https://github.com/GitCredentialManager/git-credential-manager/blob/release/docs/install.md). Download and open the appropriate ".pkg" file for your machine, gcm-osx-arm64-...pkg if you have an M1 or M2 mac, gcm-osx-x64-...pkg otherwise.
 
-* Git Credential Manager should let us push (upload) changes to repositories on GitHub using the https method. Otherwise we would need to set up an ssh key to push changes, which is beyond the scope of this workshop.
-
 ::: {style="font-size: 75%"}
-There is also an alternative method using tokens:
+&nbsp;* Git Credential Manager should let us push (upload) changes to repositories on GitHub using the https method. Otherwise we would need to set up an ssh key to push changes, which is beyond the scope of this workshop.
+
+There is also an alternative method to push changes to GitHub using tokens:
 
 Log in to github.com
 <br>→ Settings
