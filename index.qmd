@@ -10,9 +10,9 @@ theme: cerulean
 
 ## Workshop material
 
-We will be working through this material on the Carpentries incubator site:
+We will be working through material from the [Carpentries incubator](https://carpentries-incubator.org/). The [Data Fluency](https://www.monash.edu/data-fluency) program at Monash University is almost entirely based on the [Carpentries](https://carpentries.org/index.html) teaching philosophy. This new material caught our attention by perfectly capturing current thinking about some good scientific practices and practical means to achieve them.
 
-* [Workshop material](https://carpentries-incubator.github.io/reproducible-publications-quarto/index.html){target="_blank"}
+* [Workshop material: "Introduction to Reproducible Publications with RStudio"](https://carpentries-incubator.github.io/reproducible-publications-quarto/index.html){target="_blank"}
 
 We will use this example GitHub repository:
 
