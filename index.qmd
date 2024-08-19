@@ -140,6 +140,10 @@ RStudio comes bundled with Quarto and LaTeX, but you can install them separately
 <br>(Jointly developed by University of Queensland and Monash, check the [commit log](https://github.com/swbioinf/scRNAseqInR_Doco/commits/main)!)
 
 <br>
+
+[Advice on how to name files](https://github.com/jennybc/how-to-name-files/blob/main/how-to-name-files.pdf)
+
+<br>
 <br>
 
 ### _quarto.yml file required for this workshop
